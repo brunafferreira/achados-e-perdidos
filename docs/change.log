@@ -1,0 +1,126 @@
+# Achados e Perdidos Escolar
+
+Registro das alterações efetivamente implementadas no projeto.
+
+## [1.4.3] - 27/10/2026
+
+### Alterado
+
+- Removidos os objetos de demonstração da inicialização do sistema.
+- Na primeira abertura após a atualização, removidos do LocalStorage somente os cinco registros de exemplo conhecidos; os objetos cadastrados pelo responsável são preservados.
+- Os totais de objetos cadastrados, disponíveis e devolvidos começam em zero enquanto a equipe ainda não cadastrar itens.
+
+### Verificação
+
+- ESLint, TypeScript e build de produção executados após a alteração.
+
+## [1.4.2] - 27/10/2026
+
+### Alterado
+
+- Removido o link “Participantes” da barra lateral para evitar uma entrada duplicada; a navegação da equipe permanece em “Nossa equipe”.
+
+### Verificação
+
+- ESLint e verificação de tipos TypeScript executados após a alteração.
+
+## [1.4.1] - 27/10/2026
+
+### Corrigido e adicionado
+
+- Aplicado gradiente azul mais intenso e texto claro ao painel principal de login para que a identidade visual azul fique evidente.
+- Reforçada a presença do azul no botão “Entrar”, inclusive antes do preenchimento dos campos, sem habilitar o envio antecipadamente.
+- Documentada a rota `/participantes` como página oficial da equipe e do propósito do projeto.
+
+### Verificação
+
+- Build de produção executado após as alterações.
+- No navegador, confirmada a exibição dos três integrantes em `/participantes` e o formulário de login com os campos vazios.
+
+## [1.4.0] - 27/10/2026
+
+### Alterado
+
+- Atualizada a paleta visual da aplicação de verde para azul em login, navegação, botões, destaques, ilustrações e cartões.
+- Mantidos os fundos claros, os estados de interação e a legibilidade do conteúdo.
+- Registrada a identidade azul no SCOPE e no checklist de tarefas.
+
+### Verificação
+
+- Build de produção executado com sucesso após a atualização do tema.
+
+## [1.3.0] - 27/10/2026
+
+### Corrigido
+
+- Removida a recuperação de sessão no carregamento; a sessão antiga é descartada e o login é sempre solicitado após abrir ou atualizar o site.
+- Separadas as contas iniciais fixas, mantidas no código, dos usuários adicionados pelo responsável no LocalStorage.
+- Contas iniciais não são mais editáveis ou removíveis pela tela de usuários.
+- Removidas da tela de login as instruções que expunham nomes, matrículas e senhas demonstrativas.
+- O botão “Entrar” permanece desabilitado até preencher matrícula e senha; o formulário continua validando as credenciais ao enviar e informa falhas claramente.
+- O botão “Sair” remove a sessão, limpa os campos de credenciais e retorna à tela de login.
+
+### Verificação
+
+- ESLint executado sem erros.
+- Verificação de tipos TypeScript executada sem erros.
+- Build de produção executado com sucesso.
+- No navegador, verificados estado inicial com campos vazios, botão desabilitado, mensagem de erro para credenciais inválidas e login explícito.
+- No navegador, verificados permissões diferentes para Aluno e Responsável, logout, descarte de sessão anterior e retorno obrigatório ao login após atualizar.
+- Confirmado que nomes, matrículas e senhas fixas não são exibidos na tela de login e que as contas iniciais não têm ações de edição ou exclusão.
+
+## [1.2.0] - 27/10/2026
+
+### Adicionado e reforçado
+
+- Criada a página “Nossa equipe” com os integrantes registrados no SCOPE e o propósito do projeto.
+- Revalidada a sessão e a permissão de responsável antes de abrir ou executar operações administrativas.
+- Impedida a remoção da permissão do último responsável, além da proteção existente contra sua exclusão.
+- Mantidas as operações CRUD de objetos e usuários: criar, consultar, editar e excluir. O formulário de objetos também permite atualizar a situação.
+- Atualizado o SCOPE e o checklist para incluir a página de equipe e os controles de acesso reforçados.
+
+### Validação
+
+- ESLint executado sem erros.
+- Verificação de tipos TypeScript executada sem erros.
+- Build de produção executado com sucesso.
+- No navegador, verificados a página da equipe, o CRUD completo de objetos e usuários, o bloqueio quando a sessão não corresponde ao usuário responsável e a proteção contra remover a permissão do último responsável.
+
+## [1.1.0] - 27/10/2026
+
+### Adicionado
+
+- Interface responsiva em português para login, painel inicial, consulta de objetos e gerenciamento do responsável.
+- Acesso demonstrativo para responsável (`admin` / `admin123`) e aluno (`2026001` / `aluno123`), com distinção de permissões e encerramento de sessão.
+- Dados iniciais ilustrativos para tornar a demonstração utilizável no primeiro acesso.
+- Cadastro, edição e exclusão de objetos, incluindo categoria, descrição, características, foto, local, data e situação.
+- Upload de imagens com validação de formato e limite de 400 KB para reduzir o uso do LocalStorage.
+- Pesquisa por texto e filtros combináveis por categoria, local, data e situação.
+- Detalhes do objeto, indicação visual para itens sem foto e prioridade para itens disponíveis.
+- Cadastro, edição, consulta e exclusão de usuários autorizados, com validação de matrícula duplicada e proteção do último responsável.
+- Persistência local de usuários, objetos e sessão, com mensagens para dados inválidos e falhas de armazenamento.
+- Metadados em português e título do site.
+
+### Verificação
+
+- ESLint executado sem erros.
+- Verificação de tipos TypeScript executada sem erros.
+- Build de produção do Next.js executado com sucesso.
+- Smoke test no navegador: login de responsável e aluno, criação de objeto e usuário, busca, recarga com sessão/dados persistidos, bloqueio das ações administrativas para aluno e rejeição de matrícula duplicada.
+- Edição e exclusão, filtros combinados, fotos, mensagens de erro, encerramento/reabertura do navegador e validação em dispositivos reais ainda precisam de testes; ver `tasks.md`.
+
+### Limitações
+
+- O sistema é exclusivamente Front-end e não possui backend, API própria ou banco de dados externo.
+- O login e as permissões são apenas uma simulação didática. As senhas ficam em texto no LocalStorage; não cadastrar senhas reais nem dados sensíveis.
+- Os dados são locais ao navegador e perfil usados e podem ser apagados ou alterados pelo usuário do dispositivo.
+- As credenciais e os objetos pré-carregados são exemplos para demonstração; altere ou remova os dados de exemplo antes de apresentar cadastros próprios.
+- Os telefones dos usuários de demonstração são valores fictícios de preenchimento.
+
+## [1.0.0] - 27/10/2026
+
+### Registro anterior
+
+- Criada a estrutura inicial com Next.js, React e TypeScript.
+- Registradas as funcionalidades previstas para o projeto e suas limitações didáticas.
+- Criados os documentos de escopo e acompanhamento.
