@@ -73,6 +73,7 @@ Legenda: **Concluída** · **[~] Em andamento** · **Pendente**
 - Concluída — Exibir erros de dados locais inválidos e de falha ao salvar.
 - Concluída — Validar imagens e considerar os limites de armazenamento.
 - Concluída — Manter os dados após atualizar a página, no mesmo navegador e perfil.
+- Concluída — Informar que usuários e objetos permanecem salvos no mesmo navegador e perfil, sem sincronização entre dispositivos.
 
 ## 8. Testes e finalização
 
@@ -91,13 +92,14 @@ Legenda: **Concluída** · **[~] Em andamento** · **Pendente**
 - Concluída — Verificar no navegador a página da equipe e a exibição dos três integrantes.
 - Concluída — Verificar no navegador a rota `/participantes` e confirmar que o CTA desabilitado mantém a identidade azul.
 - Concluída — Confirmar que o sistema inicia com zero objetos cadastrados, disponíveis e devolvidos.
+- Concluída — Confirmar persistência de objetos e usuários após recarregar e fazer login manual novamente no mesmo navegador.
 - Concluída — Testar no navegador o CRUD completo de objetos e usuários.
 - Pendente — Testar manualmente mensagens de login inválido.
 - Pendente — Testar edição, exclusão e mudança de situação dos objetos.
 - Pendente — Testar edição, exclusão, alteração de permissão e proteção do último responsável.
 - Pendente — Testar combinações de filtros, filtro por data e estado sem resultados.
 - Pendente — Testar upload de imagens, limite de tamanho e erro de quota do navegador.
-- Pendente — Verificar persistência após fechar e reabrir o navegador.
+- Pendente — Verificar persistência após fechar completamente e reabrir o navegador.
 - Pendente — Conferir responsividade em dispositivos e tamanhos de tela reais.
 - Pendente — Corrigir eventuais problemas encontrados nos testes manuais.
 - Pendente — Preparar a apresentação e a entrega do projeto.

@@ -728,7 +728,7 @@ export default function Home() {
                   ))}</tbody>
                 </table>
               </div>
-              <p className="users-footnote">Os dados são salvos somente neste navegador e não são sincronizados entre dispositivos.</p>
+              <p className="users-footnote">Usuários e objetos ficam salvos neste navegador e perfil, mesmo após fechar e reabrir. Não há sincronização entre dispositivos.</p>
             </section>
           )}
           {view === "team" && (

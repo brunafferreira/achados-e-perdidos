@@ -2,6 +2,19 @@
 
 Registro das alterações efetivamente implementadas no projeto.
 
+## [1.4.4] - 28/10/2026
+
+### Corrigido
+
+- Esclarecido na interface que usuários e objetos permanecem salvos no mesmo navegador e perfil, mesmo após fechar e reabrir, sem sincronização entre dispositivos.
+- Confirmado que o carregamento dos dados do LocalStorage não restaura a sessão: o login continua manual após atualizar a página.
+- Confirmado que cadastros, edições e exclusões de usuários e objetos passam pela gravação no LocalStorage; fotos são armazenadas localmente com limite de 400 KB.
+
+### Verificação
+
+- ESLint, TypeScript e build de produção executados.
+- No navegador, verificada persistência dos dados após recarga e novo login manual.
+
 ## [1.4.3] - 27/10/2026
 
 ### Alterado
